@@ -4,7 +4,7 @@ from sqlalchemy import Enum, Column, ForeignKey, Integer, String, Text, Boolean
 from sqlalchemy.orm import relationship
 from sqlalchemy_utils import URLType
 
-from database.main import Base
+from ..main import Base
 from .users_model import User
 from .mixins import TimestampMixin
 
@@ -15,7 +15,6 @@ class ContentType(enum.Enum):
     assignment = 3
 
 
-# Models
 class Course(TimestampMixin, Base):
     __tablename__ = "courses"
 
@@ -24,7 +23,6 @@ class Course(TimestampMixin, Base):
     description = Column(Text, nullable=True)
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
 
-    # Relationshps
     created_by = relationship(User)
     sections = relationship("Section", back_populates="course", uselist=False)
     student_courses = relationship("StudentCourse", back_populates="course")
