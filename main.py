@@ -3,6 +3,15 @@ from fastapi import FastAPI
 # Routers
 from api.routes import users, sections, courses
 
+# DB models
+from database.main import engine
+from database.models import users_model, courses_model
+
+# Create models in DB
+users_model.Base.metadata.create_all(bind=engine)
+courses_model.Base.metadata.create_all(bind=engine)
+
+
 tags_metadata = [
     {
         "name": "Users",

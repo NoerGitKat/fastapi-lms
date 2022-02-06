@@ -228,7 +228,7 @@ standard = ["websockets (>=10.0)", "httptools (>=0.2.0,<0.4.0)", "watchgod (>=0.
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "cb9170c557104bdede3fff92020bc56ac70bfdf2aeb7817bb92b84cb5aa3b1fc"
+content-hash = "fe5c938c7bd36db275f708ccd612af571e5433263f6dcbf9c59c29536ca08a1e"
 
 [metadata.files]
 anyio = [
